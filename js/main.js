@@ -1,7 +1,24 @@
 Splitting();
+const myMarker = {
+  fontSize: "20px",
+  indent: 50,
+  startColor: "#000",
+  endColor: "#f00",
+};
+const mySkill = {
+  myHtml: 90,
+  myCss: 95,
+  myJs: 88,
+};
+// gsap.from(mySkill, {
+//   myHtml: 0,
+//   duration: 3,
+//   onUpdate: function () {
+//     console.log(Math.round(mySkill.myHtml));
+//   },
+// });
 
 gsap.defaults({ ease: "power4", duration: 1 });
-
 const mainvisualTL = gsap.timeline();
 mainvisualTL
   .from("#mainVisual .title .char", {
@@ -28,14 +45,11 @@ mainvisualTL
 const introduceTL = gsap.timeline({
   scrollTrigger: {
     trigger: "#introduce",
-    markers: {
-      fontSize: "20px",
-      indent: 50,
-      startColor: "#000",
-      endColor: "#f00",
-    },
-    start: "top center",
+    markers: myMarker,
+    start: "top top",
     end: "bottom top",
+    pin: true,
+    scrub: 2,
   },
 });
 introduceTL
@@ -68,14 +82,11 @@ introduceTL
 const introduce02TL = gsap.timeline({
   scrollTrigger: {
     trigger: "#introduce02",
-    markers: {
-      fontSize: "20px",
-      indent: 50,
-      startColor: "#000",
-      endColor: "#f00",
-    },
-    start: "top center",
+    markers: myMarker,
+    start: "top top",
     end: "bottom top",
+    pin: true,
+    scrub: 2,
   },
 });
 introduce02TL
@@ -98,14 +109,11 @@ introduce02TL
 const portfolioTL = gsap.timeline({
   scrollTrigger: {
     trigger: "#portfolio",
-    markers: {
-      fontSize: "20px",
-      indent: 50,
-      startColor: "#000",
-      endColor: "#f00",
-    },
-    start: "top center",
+    markers: myMarker,
+    start: "top top",
     end: "bottom top",
+    pin: true,
+    scrub: 2,
   },
 });
 portfolioTL
@@ -138,14 +146,11 @@ portfolioTL
 const portfolioListTL = gsap.timeline({
   scrollTrigger: {
     trigger: "#portfolioList",
-    markers: {
-      fontSize: "20px",
-      indent: 50,
-      startColor: "#000",
-      endColor: "#f00",
-    },
-    start: "top center",
+    markers: myMarker,
+    start: "top-=100 top",
     end: "bottom top",
+    pin: true,
+    scrub: 2,
   },
 });
 portfolioListTL
@@ -175,14 +180,11 @@ portfolioListTL
 const roseTL = gsap.timeline({
   scrollTrigger: {
     trigger: "#rose",
-    markers: {
-      fontSize: "20px",
-      indent: 50,
-      startColor: "#000",
-      endColor: "#f00",
-    },
-    start: "top center",
+    markers: myMarker,
+    start: "top top",
     end: "bottom top",
+    pin: true,
+    scrub: 2,
   },
 });
 roseTL
@@ -209,5 +211,51 @@ roseTL
     x: 200,
     stagger: {
       each: 0.05,
+    },
+  });
+
+const skillTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#skill",
+    markers: myMarker,
+    start: "top center",
+    end: "bottom top",
+  },
+});
+skillTL
+  .from("#skill h2 .char", {
+    opacity: 0,
+    x: 200,
+    stagger: {
+      each: 0.05,
+    },
+  })
+  .from("#skill .no", {
+    opacity: 0,
+  })
+  .from("#skill .subTitle .char", {
+    opacity: 0,
+    x: 200,
+    stagger: {
+      each: 0.05,
+    },
+  })
+  .from("#skill .skillBox li", {
+    y: 150,
+    opacity: 0,
+    stagger: {
+      each: 0.05,
+    },
+  })
+  .from(mySkill, {
+    myHtml: 0,
+    myCss: 0,
+    myJs: 0,
+    duration: 3,
+    onUpdate: function () {
+      //console.log(Math.round(mySkill.myHtml));
+      $("#skill li:nth-child(1) .num .txt").text(Math.round(mySkill.myHtml));
+      $("#skill li:nth-child(2) .num .txt").text(Math.round(mySkill.myCss));
+      $("#skill li:nth-child(3) .num .txt").text(Math.round(mySkill.myJs));
     },
   });

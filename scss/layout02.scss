@@ -141,7 +141,7 @@ h3 {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #faf8e1;
+    width: 100%;
     .title {
       font-size: 6vw;
       color: rgb(48, 43, 38);
@@ -179,6 +179,7 @@ h3 {
     height: 100vh;
     position: relative;
     align-items: center;
+    background-color: #fff;
     .container {
       display: flex;
       align-items: center;
@@ -302,7 +303,6 @@ h3 {
   }
   #portfolioList {
     margin-top: 200px;
-
     .container {
       display: block;
     }
@@ -478,7 +478,7 @@ h3 {
     //margin-top: 100px;
     min-height: 100vh;
     position: relative;
-    padding: 300px 0 100px;
+    padding: 100px 0 100px;
     .ship {
       position: absolute;
       left: 50%;

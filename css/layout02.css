@@ -117,7 +117,7 @@ h3 strong {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: #faf8e1;
+  width: 100%;
 }
 #main #mainVisual .title {
   font-size: 6vw;
@@ -155,6 +155,7 @@ h3 strong {
   height: 100vh;
   position: relative;
   align-items: center;
+  background-color: #fff;
 }
 #main #introduce .container {
   display: flex;
@@ -426,7 +427,7 @@ h3 strong {
 #main #contact {
   min-height: 100vh;
   position: relative;
-  padding: 300px 0 100px;
+  padding: 100px 0 100px;
 }
 #main #contact .ship {
   position: absolute;

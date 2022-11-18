@@ -460,11 +460,10 @@ h3 strong {
   margin: 50px auto;
 }
 #main #contact .info {
-  margin-top: 100px;
   font-size: 2vw;
 }
 #main #contact .info .infoBox {
-  margin-top: 50px;
+  margin: 50px 0;
 }
 #main #contact .prince {
   text-align: center;
@@ -604,4 +603,39 @@ h3 strong {
   font-size: 16px;
   font-family: "Noto Sans KR";
   border-radius: 5px;
+}
+
+.message-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99;
+  transition: all 0.25s ease;
+}
+.message-box.on {
+  opacity: 1;
+  pointer-events: auto;
+}
+.message-box .txt {
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+.message-box .btn-close {
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-top: 50px;
 }

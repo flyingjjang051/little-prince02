@@ -340,6 +340,11 @@ contactTL
     },
     "-=0.5"
   )
+  .from("#email", { opacity: 0, x: 100 })
+  .from("#name", { opacity: 0, x: 100 })
+  .from("#phone", { opacity: 0, x: 100 })
+  .from("#contents", { opacity: 0, x: 100 })
+  .from("#contact .btn-send", { opacity: 0, x: 100 })
   .from("#contact .prince", {
     opacity: 0,
     duration: 1,
@@ -376,9 +381,21 @@ $(".btn-send").on("click", function () {
   emailjs.send("service_lczzn4m", "template_3m4gxrm", templateParams).then(
     function (response) {
       console.log("SUCCESS!", response.status, response.text);
+      $(".message-box").addClass("on");
+      $(".message-box .txt").text(" 메일이 발송 되었습니다.");
+      $("#name").val("");
+      $("#email").val("");
+      $("#phone").val("");
+      $("#contents").val("");
     },
     function (error) {
       console.log("FAILED...", error);
+      $(".message-box").addClass("on");
+      $(".message-box .txt").text("알 수 없는 오류로 메일 발송이 되지 않았습니다");
     }
   );
+});
+
+$(".message-box .btn-close").on("click", function () {
+  $(".message-box").removeClass("on");
 });

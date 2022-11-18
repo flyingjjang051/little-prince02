@@ -363,3 +363,22 @@ $(".popup .btn-oneday").on("click", function () {
   Cookies.set("oneDay", "ok", { expires: 1 });
   gsap.to(".popup", { top: -1000, ease: "back.in", duration: 1 });
 });
+
+$(".btn-send").on("click", function () {
+  emailjs.init("EziNCotjfbGMty574");
+  const templateParams = {
+    name: $("#name").val(),
+    phone: $("#phone").val(),
+    email: $("#email").val(),
+    message: $("#contents").val(),
+  };
+
+  emailjs.send("service_lczzn4m", "template_3m4gxrm", templateParams).then(
+    function (response) {
+      console.log("SUCCESS!", response.status, response.text);
+    },
+    function (error) {
+      console.log("FAILED...", error);
+    }
+  );
+});

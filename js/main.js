@@ -344,3 +344,22 @@ contactTL
     opacity: 0,
     duration: 1,
   });
+$(window).on("load", function () {
+  $("html,body").scrollTop(0);
+  $("body").css({ overflowY: "auto" });
+});
+
+if (Cookies.get("oneDay") !== "ok") {
+  console.log("쿠키 없음");
+  gsap.to(".popup", { top: 100, duration: 1, ease: "back" });
+} else {
+  $(".popup").remove();
+}
+
+$(".popup .btn-close").on("click", function () {
+  gsap.to(".popup", { top: -1000, ease: "back.in", duration: 1 });
+});
+$(".popup .btn-oneday").on("click", function () {
+  Cookies.set("oneDay", "ok", { expires: 1 });
+  gsap.to(".popup", { top: -1000, ease: "back.in", duration: 1 });
+});

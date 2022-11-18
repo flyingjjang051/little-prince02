@@ -6,7 +6,8 @@ html {
 body {
   font-family: "Roboto Slab", "Noto Sans KR";
   font-size: 1.6rem;
-  min-height: 5000px;
+  overflow: hidden;
+  height: 100vh;
 }
 
 h2 {
@@ -536,4 +537,37 @@ h3 strong {
   animation: scrollAni 0.3s ease infinite alternate;
   background-color: #fff;
   border-radius: 10px;
+}
+
+.popup {
+  position: fixed;
+  left: 100px;
+  top: -1000px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 3px solid #ccc;
+}
+.popup .img-box {
+  padding: 50px;
+}
+.popup .message {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 30px;
+}
+.popup img {
+  width: 400px;
+}
+.popup .btns {
+  display: flex;
+}
+.popup .btns button {
+  flex-basis: 50%;
+  height: 50px;
+  background-color: #ccc;
+}
+.popup .btns button.btn-oneday {
+  background-color: #111;
+  color: #fff;
 }

@@ -7,7 +7,10 @@ html {
 body {
   font-family: "Roboto Slab", "Noto Sans KR";
   font-size: 1.6rem;
-  min-height: 5000px;
+  overflow: hidden;
+  height: 100vh;
+
+  //min-height: 5000px;
   //cursor: none;
   //user-select: none;
 }
@@ -592,4 +595,37 @@ h3 {
     border-radius: 10px;
   }
   display: none;
+}
+
+.popup {
+  position: fixed;
+  left: 100px;
+  top: -1000px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 3px solid #ccc;
+  .img-box {
+    padding: 50px;
+  }
+  .message {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 30px;
+  }
+  img {
+    width: 400px;
+  }
+  .btns {
+    display: flex;
+    button {
+      flex-basis: 50%;
+      height: 50px;
+      background-color: #ccc;
+      &.btn-oneday {
+        background-color: #111;
+        color: #fff;
+      }
+    }
+  }
 }
